@@ -236,3 +236,4 @@ var both = function() {
   return newArr
 }
 both(arr1, arr2);
+
