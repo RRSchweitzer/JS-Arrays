@@ -230,5 +230,9 @@ longest(arr1, arr2);
   Your 'both' function will be given two arguments, arr1 and arr2 (from the previous example)
   'both' should return a new array full of numbers that are found in both arr1 and arr2.
 */
-
-  //Code Here
+newArr = [];
+var both = function() {
+  var newArr = arr2.concat(arr1);
+  return newArr
+}
+both(arr1, arr2);
