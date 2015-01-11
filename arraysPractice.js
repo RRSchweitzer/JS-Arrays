@@ -108,6 +108,7 @@ var finder = function() {
     }
   };
 }
+finder();
 
 //Next problem
 
@@ -128,9 +129,12 @@ reverse(backwardStr);
 
 
 var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
+var remove = "chips";
+var add = "Jerky";
 /*
   Here we're going to write a function that mimics going shopping and checking things off of our grocery list,
-  and adding new items to our list. Write a function called removeItem that is given two arguments, the first is myGroceryList, and the
+  and adding new items to our list. 
+  Write a function called removeItem that is given two arguments, the first is myGroceryList, and the
   second is an item to remove from myGroceryList. If the second argument (or the item to add or remove) matches an item in myGroceryList,
   remove that item from the your grocery list and return the new, updated grocery list. Once you do that,
   write another function called addItem that is given two arguments, the first is myGroceryList
@@ -138,11 +142,29 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   myGroceryList then return the new, updated grocery list.
 */
 
-  //Code Here
+var removeItem = function(list, arg1) {
+  for (var i = 0; i < list.length; i++) {
+    if(list[i] === arg1) {
+      myGroceryList.splice(i,1);
+      return myGroceryList
+    }
+  };
+}
+removeItem(myGroceryList, remove);
 
-//removeItem('chips') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs'];
+
+var addItem = function(list, arg2) {
+  for (var i = 0; i < list.length; i++) {
+    if(list[i] !== arg2) {
+      myGroceryList.push(arg2);
+      return myGroceryList
+    }
+  };
+}
+addItem(myGroceryList, add);
+  
+//removeItem('chips') -->['pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 //addItem('Jerky') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs', 'Jerky'];
-
 
 
 //Next Problem
@@ -151,20 +173,31 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 
 //Write a function called maker that creates an array, fills that array with numbers from 1 to 215, then returns the array.
 
-  //Code Here
-
+var numList = [];
+var maker = function(numCreate) {
+  for (var i = 1; i <= 215; i++) {
+     numCreate.push(i);
+  };
+  return numCreate;
+}
+maker(numList);
 
 
 //Next Problem
 
 
 var numbers = [5, '9', 16, 19, '25', '34', 48];
+
 //Write a function called addTen that is given 'numbers' as it's only argument and returns a new
 //array after adding ten to each item in numbers. *Verify your answer is correct. --> [15, 19, 26, 29, 35, 44, 58]
 
-  //Code Here
-
-
+var addTen = function(funcTen) {
+  for (var i = 0; i < funcTen.length; i++) {
+    funcTen[i] = parseInt(funcTen[i]) + 10;
+  };
+  return funcTen;
+}
+addTen(numbers);
 
 //Next Problem
 
@@ -183,8 +216,15 @@ for(var i = 0; i < num2; i++){
 //Above is some code that adds a random number to both arr1 and arr2.
 //Write a function that is given arr1 and arr2 is it's only arguments. Return the array which is longest.
 
-  //Code Here
-
+var longest = function(one, two) {
+  if (one.length > two.length) {
+    return one;
+  }
+  else {
+    return two;
+  }
+}
+longest(arr1, arr2);
 
 /*As a continuation of the previous problem, write another function called 'both'.
   Your 'both' function will be given two arguments, arr1 and arr2 (from the previous example)
